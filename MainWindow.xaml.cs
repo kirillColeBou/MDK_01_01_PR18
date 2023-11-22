@@ -23,6 +23,7 @@ namespace PrintManagementSystem_Тепляков
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void EditOperation(object sender, RoutedEventArgs e)
