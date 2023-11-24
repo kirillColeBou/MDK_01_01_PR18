@@ -9,13 +9,13 @@ namespace PrintManagementSystem_Тепляков.Classes
     public class TypeOpertation
     {
         public int id { get; set; }
-        public string format { get; set; }
+        public string name { get; set; }
         public string description { get; set; }
 
-        public TypeOpertation(int _id, string _format, string _description)
+        public TypeOpertation(int _id, string _name, string _description)
         {
             this.id = _id;
-            this.format = _format;
+            this.name = _name;
             this.description = _description;
         }
 

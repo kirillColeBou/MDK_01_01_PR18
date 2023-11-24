@@ -21,7 +21,7 @@
                 <ListView x:Name="Operations" Height="138" Margin="10,97,5,0" VerticalAlignment="Top">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Вид работы" Width="75" DisplayMemberBinding="{Binding typeOperationsText}"/>
+                            <GridViewColumn Header="Вид работы" Width="75" DisplayMemberBinding="{Binding typeOperationText}"/>
                             <GridViewColumn Header="Формат" Width="75" DisplayMemberBinding="{Binding formatText}"/>
                             <GridViewColumn Header="Сторона" Width="50" DisplayMemberBinding="{Binding side}"/>
                             <GridViewColumn Header="Цвет" Width="100" DisplayMemberBinding="{Binding colorText}"/>
