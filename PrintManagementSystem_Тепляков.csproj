@@ -64,14 +64,29 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\Format.cs" />
+    <Compile Include="Classes\Magazine.cs" />
     <Compile Include="Classes\TypeOpertation.cs" />
     <Compile Include="Classes\TypeOpertationsWindow.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Magazine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Record.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\Magazine.xaml.cs">
+      <DependentUpon>Magazine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Record.xaml.cs">
+      <DependentUpon>Record.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
