@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrintManagementSystem_Тепляков.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace PrintManagementSystem_Тепляков.Pages
     /// </summary>
     public partial class Magazine : Page
     {
-        public Magazine()
+        public static Record record;
+        public Magazine(Record rec)
         {
             InitializeComponent();
+            record = rec;
+            oooo.ItemsSource = Record.magazins;
         }
 
         private void Back(object sender, RoutedEventArgs e)

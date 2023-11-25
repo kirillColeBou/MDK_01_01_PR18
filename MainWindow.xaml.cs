@@ -1,4 +1,5 @@
 ﻿using PrintManagementSystem_Тепляков.Classes;
+using PrintManagementSystem_Тепляков.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace PrintManagementSystem_Тепляков
     public partial class MainWindow : Window
     {
         public static MainWindow main;
+        public static Record rec = new Record();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -38,12 +41,12 @@ namespace PrintManagementSystem_Тепляков
         {
             if (_pages == pages.record)
             {
-                frame.Navigate(new Pages.Record());
+                frame.Navigate(rec);
                 mainWindow.Title = "Система управления печатью";
             }
             if (_pages == pages.magazine)
             {
-                frame.Navigate(new Pages.Magazine());
+                frame.Navigate(new Pages.Magazine(rec));
                 mainWindow.Title = "Журнал";
             }
         }

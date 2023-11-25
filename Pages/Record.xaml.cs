@@ -24,11 +24,14 @@ namespace PrintManagementSystem_Тепляков.Pages
     {
         public List<TypeOpertation> typeOperationsList = TypeOpertation.AllTypeOpertation();
         public List<Format> formatsList = Format.AllFormats();
+        public static Record rec;
+        public static List<Magazin> magazins = new List<Magazin>();
 
         public Record()
         {
             InitializeComponent();
             LoadData();
+            rec = this;
         }
 
         void LoadData()
@@ -299,12 +302,34 @@ namespace PrintManagementSystem_Тепляков.Pages
             addOperationButton.Content = "Добавить";
             Operations.Items.Add(newTOW);
             CalculationsAllPrice();
-        }
+            string twoSide;
+            string colorText;
+            string format;
 
+            if (TwoSides.IsChecked == false) twoSide = "1";
+            else twoSide = "2";
+            if (Colors.IsChecked == false) colorText = "Ч/Б";
+            else colorText = "ЦВ";
+            if (formats.SelectedIndex == -1) format = "нет";
+            else format = formats.SelectedItem.ToString();
+            magazins.Add(new Magazin
+                (
+                usersName.Text, 
+                typeOperation.SelectedItem.ToString(), 
+                format, 
+                twoSide, 
+                colorText, 
+                int.Parse(textBoxCount.Text), 
+                float.Parse(textBoxPrice.Text), 
+                "здесь должна быть картинка.")
+                );
+        }
+        
         private void ColorsChange(object sender, RoutedEventArgs e) => CostCalculations();
 
         private void OpenMagazine(object sender, RoutedEventArgs e)
         {
+            
             MainWindow.main.OpenPages(MainWindow.pages.magazine);
         }
     }
